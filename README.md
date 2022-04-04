@@ -34,3 +34,11 @@ Google Chrome extensie voor een uitgebreide ranking op Badminton Vlaanderen:
 6. De extensie zou tussen alle andere moeten staan, ga naar badmintonvlaanderen.be om te kijken als alles werkt!
 
 > ![image](https://user-images.githubusercontent.com/17025996/161549691-edc695cc-a571-4070-996b-823deb4a6e83.png)
+
+## Problemen oplossen
+
+### Daalpunten en limieten zijn niet ingevuld
+
+Dit komt voor als je nog niet minstens één keer rechtsreeks naar toernooi.nl bent geweest en daar de cookies hebt aanvaard. De cookiewall zorgt ervoor dat de extensie niet aan de nodige data kan om de gegevens op te halen.
+
+![image](https://user-images.githubusercontent.com/17025996/161587537-0c456bdc-351d-4a62-8583-f8ca62379abc.png)
