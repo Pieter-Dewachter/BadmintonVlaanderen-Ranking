@@ -1,0 +1,18 @@
+.ascend::after,
+.descend::after {
+    content: attr(data-value);
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    margin-inline: 5px;
+    font-size: 11px;
+    width: 40%;
+}
+
+.ascend::after {
+    background-color: limegreen;
+}
+
+.descend::after {
+    background-color: orange;
+}
