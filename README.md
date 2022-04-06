@@ -9,7 +9,8 @@ Google Chrome extensie voor een uitgebreide ranking op Badminton Vlaanderen:
 
 ### Eenvoudige manier: Chrome Web Store
 
-*Nog niet goedgekeurd door Google, komt (hopelijk) later!*
+Installeer de addon rechtsreeks vanaf de Chrome Web Store, klik op "Toevoegen aan Chrome" op de volgende link:
+https://chrome.google.com/webstore/detail/badminton-vlaanderen-rank/giedloglpnenfagmpldleodnjgfbapnf
 
 ### Manuele installatiemethode
 
