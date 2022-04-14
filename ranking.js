@@ -1,4 +1,5 @@
-let profileUrl = document.getElementsByClassName("profile")[0]
+let profileElements = document.getElementsByClassName("profile")
+let profileUrl = profileElements[profileElements.length - 1]
 let playerUuid = profileUrl.href.split('=').pop()
 
 chrome.runtime.sendMessage(
