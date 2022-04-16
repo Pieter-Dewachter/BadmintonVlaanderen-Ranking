@@ -7,11 +7,18 @@
     "background": {
         "service_worker": "service.js"
     },
-    "content_scripts": [{
-        "matches": [ "https://www.badmintonvlaanderen.be/ranking/player.aspx*"],
-        "css": [ "ranking.css" ],
-        "js": [ "ranking.js" ]
-    }],
+    "content_scripts": [
+        {
+            "matches": [ "https://www.badmintonvlaanderen.be/ranking/player.aspx*" ],
+            "css": [ "ranking.css" ],
+            "js": [ "ranking.js" ]
+        },
+        {
+            "matches": [ "https://www.badmintonvlaanderen.be/profile/overview.aspx*" ],
+            "css": [ "ranking.css" ],
+            "js": [ "profile.js" ]
+        }
+    ],
     "host_permissions": [
         "https://www.toernooi.nl/*"
     ]
