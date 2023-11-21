@@ -8,8 +8,8 @@ chrome.runtime.sendMessage(
         playerUuid: playerUuid
     },
     data => {
-        let toernooiHtml = document.createElement("html")
-        toernooiHtml.innerHTML = data
+        let parser = new DOMParser()
+        let toernooiHtml = parser.parseFromString(data, "text/html")
 
         let toernooiDivs = toernooiHtml.getElementsByClassName("rating-header")
         let badmintonVlaanderenTrs = profileUrl.closest("table").rows
