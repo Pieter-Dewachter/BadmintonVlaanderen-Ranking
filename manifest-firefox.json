@@ -2,7 +2,7 @@
     "name": "Badminton Vlaanderen Ranking",
     "author": "Pieter Dewachter",
     "description": "Uitgebreide ranking op badmintonvlaanderen.be",
-    "version": "1.4",
+    "version": "1.5",
     "manifest_version": 3,
     "background": {
         "scripts": ["service.js"]
