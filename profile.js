@@ -46,8 +46,8 @@ chrome.runtime.sendMessage(
         }
 
         // Target points for ascending / descending in rank
-        let ascendArray = [ 2162, 1442, 961, 641, 427, 285, 190, 127, 84, 56, 38 ]
-        let descendArray = [ 1297, 865, 577, 384, 256, 171, 114, 76, 51, 34, 23 ]
+        let ascendArray = [ 1373, 951, 659, 457, 316, 219, 152, 105, 73, 51, 35 ]
+        let descendArray = [ 991, 686, 476, 330, 228, 158, 110, 76, 53, 36, 25 ]
 
         for (i = 0; i < toernooiDivs.length; ++i) {
             if (badmintonVlaanderenTrs[i+1]) {
