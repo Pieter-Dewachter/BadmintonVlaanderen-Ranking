@@ -1,5 +1,6 @@
 .ascend::after,
-.descend::after {
+.descend::after,
+.bonus::after {
     content: attr(data-value);
     display: inline-block;
     text-align: center;
@@ -15,4 +16,8 @@
 
 .descend::after {
     background-color: orange;
+}
+
+.bonus::after {
+    background-color: lightblue;
 }

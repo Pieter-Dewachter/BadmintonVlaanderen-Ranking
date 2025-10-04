@@ -2,7 +2,7 @@
     "name": "Badminton Vlaanderen Ranking",
     "author": "Pieter Dewachter",
     "description": "Uitgebreide ranking op badmintonvlaanderen.be",
-    "version": "1.6",
+    "version": "1.7",
     "manifest_version": 3,
     "background": {
         "scripts": ["service.js"]
@@ -20,7 +20,8 @@
         }
     ],
     "host_permissions": [
-        "https://www.toernooi.nl/*"
+        "https://www.toernooi.nl/*",
+        "https://badmintonvlaanderen.robsphere.eu/*"
     ],
     "browser_specific_settings": {
         "gecko": {

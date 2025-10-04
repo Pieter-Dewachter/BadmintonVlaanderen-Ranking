@@ -9,5 +9,13 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
                     .then(data => sendResponse(data))
             })
         return true
-      }
+    }
+    else if (request.contentScriptQuery == "queryRobSphere") {
+        let robSphereUrl = "https://badmintonvlaanderen.robsphere.eu/api/public/players/" + request.playerId + "/counters"
+        fetch (robSphereUrl)
+            .then(response => response.json())
+            .then(data => sendResponse(data))
+            .catch(_ => sendResponse({ "singleCounterSum": 0, "doubleCounterSum": 0, "mixedCounterSum": 0 }))
+        return true
+    }
 } )
