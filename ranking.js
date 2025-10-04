@@ -86,12 +86,12 @@ let queryRobSphere = () => {
         data => {
             // Extract points from JSON data
             let bonusPoints = {
-                "HE/SM": data.singleCounterSum,
-                "DE/SD": data.singleCounterSum,
-                "HD/DM": data.doubleCounterSum,
-                "DD": data.doubleCounterSum,
-                "GD H/DX M": data.mixedCounterSum,
-                "GD D/DX D": data.mixedCounterSum
+                "HE/SM": data.singleCounterSum || 0,
+                "DE/SD": data.singleCounterSum || 0,
+                "HD/DM": data.doubleCounterSum || 0,
+                "DD": data.doubleCounterSum || 0,
+                "GD H/DX M": data.mixedCounterSum || 0,
+                "GD D/DX D": data.mixedCounterSum || 0
             }
 
             // Target points for ascending in rank
