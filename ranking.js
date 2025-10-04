@@ -3,10 +3,6 @@ let profileUrl = profileElements[profileElements.length - 1]
 let badmintonVlaanderenTrs = profileUrl.closest("table").rows
 let playerUuid = profileUrl.href.split('=').pop()
 
-let playerText = profileUrl.parentElement.textContent
-let playerRegex = /\((\d+)\)/ // Number between ()
-let playerId = playerRegex.exec(playerText)[1]
-
 let queryToernooi = () => {
     chrome.runtime.sendMessage(
         {
@@ -72,12 +68,13 @@ let queryToernooi = () => {
                 }
             }
 
-            queryRobSphere()
+            let playerId = toernooiHtml.getElementsByClassName("media__title-aside")[0].textContent
+            queryRobSphere(playerId.slice(1, -1)) // Remove parenthesis
         }
     )
 }
 
-let queryRobSphere = () => {
+let queryRobSphere = (playerId) => {
     chrome.runtime.sendMessage(
         {
             contentScriptQuery: "queryRobSphere",
