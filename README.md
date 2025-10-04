@@ -1,9 +1,9 @@
 # BadmintonVlaanderen-Ranking
 Google Chrome en Firefox extensie voor een uitgebreide ranking op Badminton Vlaanderen:
-- Zowel stijg- als daalpunten zijn zichtbaar
-- Limieten voor stijgen en dalen worden getoond
+- Zowel stijg-, daal- als bonuspunten zijn zichtbaar
+- Limieten voor stijgen, dalen en bonus worden getoond
 
-![screenshot](https://user-images.githubusercontent.com/17025996/161548139-a6e3e799-e7e4-4d8f-b07d-0629be5b6636.png)
+![screenshot](https://github.com/user-attachments/assets/fae8af44-7bb2-4ec5-827e-a836e8c8b59b)
 
 ## Installatie
 
