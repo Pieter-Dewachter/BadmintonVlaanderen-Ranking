@@ -1,12 +1,34 @@
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
     if (request.contentScriptQuery == "queryToernooi") {
-        let cookieUrl = "https://www.toernooi.nl/cookiewall/Save"
-        fetch(cookieUrl, { method: "POST" })
-            .then(_ => {
-                let toernooiUrl = "https://www.toernooi.nl/player-profile/" + request.playerUuid + "/Rating"
-                fetch(toernooiUrl)
-                    .then(response => response.text())
-                    .then(data => sendResponse(data))
+        // The BV ranking page gives us a "site-local" player GUID + numeric id,
+        // but the /player-profile/<guid>/Rating page uses a DIFFERENT GUID
+        // (the one toernooi.nl assigns). Hitting /player/<bvGuid>/<bvId>
+        // server-redirects to /player-profile/<toernooiGuid>, so we follow
+        // the redirect and read the final URL to discover the right GUID.
+        let resolveUrl = "https://badvla.tournamentsoftware.com/player/"
+            + request.playerUuid + "/" + request.playerId
+        console.log("BV Ranking [bg]: resolve", resolveUrl)
+        fetch(resolveUrl, { redirect: "follow" })
+            .then(response => {
+                console.log("BV Ranking [bg]: resolved to", response.url, "status", response.status)
+                let m = response.url.match(/\/player-profile\/([0-9a-f-]+)/i)
+                if (!m) {
+                    throw new Error("could not resolve toernooi GUID from " + response.url)
+                }
+                let toernooiGuid = m[1]
+                let ratingUrl = "https://badvla.tournamentsoftware.com/player-profile/"
+                    + toernooiGuid + "/Rating"
+                console.log("BV Ranking [bg]: fetch rating", ratingUrl)
+                return fetch(ratingUrl)
+            })
+            .then(response => {
+                console.log("BV Ranking [bg]: rating response status", response.status)
+                return response.text()
+            })
+            .then(data => sendResponse(data))
+            .catch(err => {
+                console.error("BV Ranking: queryToernooi failed", err)
+                sendResponse(null)
             })
         return true
     }
